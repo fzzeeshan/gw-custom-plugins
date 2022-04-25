@@ -1,0 +1,11 @@
+
+    /**
+      * Field <fieldName>
+      * Sets the value of <fieldName> for entities created using this builder class
+    */
+    @Param("<fieldName>", "Value to be set for <fieldName>")
+    function with<methodName> (<varName> : <dataType>) : <builderName>
+    {
+        this.set(<entityName>.Type.TypeInfo.getProperty("<fieldName>"), <varName>)
+        return this
+    }

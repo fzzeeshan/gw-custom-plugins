@@ -1,0 +1,31 @@
+package <<packageName>>;
+
+<<usesStatement>>
+
+/**
+ * <builderName> - Builder for <entityName> entity
+ * <jiraReference> - <jiraDescription>
+ *
+ * Auto generated builder class
+ * Author: <authorName>
+ * Date: <today>
+ * Time: <time>
+*/
+class <builderName> {
+
+    construct(){
+        super(<entityName>)
+    }
+
+    public function create<entityName>Util (<<paramsList>>) : <entityName> {
+
+        var _instance = new <entityName>()
+
+<<fieldsModel>>
+
+        return _instance;
+
+    }
+
+
+}

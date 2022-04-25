@@ -1,0 +1,6 @@
+
+
+construct(){
+    super({entityName})
+}
+

@@ -1,0 +1,9 @@
+
+
+/**
+ * <builderName> - Builder for <entityName> entity
+ * <jiraReference> - <jiraDescription>
+ * Auto generated builder class - <authorName>
+*/
+@Export
+class <entityName> extends DataBuilder<<entityName>, <builderName>> {

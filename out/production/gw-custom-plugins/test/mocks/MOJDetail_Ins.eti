@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<entity
+  xmlns="http://guidewire.com/datamodel"
+  desc="MOJ details"
+  entity="MOJDetail_Ins"
+  exportable="false"
+  final="false"
+  table="MOJDetail_Ins"
+  type="retirable">
+  <implementsEntity
+   name="Extractable"/>
+
+  <index 
+   desc="Index for this entity"
+   name="claim7u"
+   unique="true">
+   <indexcol
+     keyposition="1"
+     name="ID"/>
+   <indexcol
+     keyposition="2"
+     name="Retired"/>
+  </index>
+
+  <foreignkey
+   columnName="MOJNotification_InsID"
+   desc="MOJ Notification"
+   fkentity="MOJNotification_Ins"
+   name="MOJNotification_Ins"
+   nullok="true"/>
+  <array
+   arrayEntity="MOJTimeout_Ins"
+   name="MOJTimeouts_Ins"/>
+  <foreignkey
+   columnName="ClaimID"
+   desc="Claim for this case"
+   fkentity="Claim"
+   name="Claim"
+   nullok="true"/>
+  <typekey
+   desc="Current phase of MOJ system"
+   name="CurrentPhase_Ins"
+   nullok="true"
+   typelist="MOJPhaseId_Ins"/>
+  <typekey
+   desc="Losstype for MOJ Settlement pack"
+   name="ClaimValue_Ins"
+   nullok="true"
+   typelist="MOJClaimValue_Ins"/>     
+  <column
+   desc="Activity Engine GUID"
+   name="ActivityEngineGUID_Ins"
+   nullok="true"
+   type="shorttext"/>
+  <column
+   desc="Article 75 decision"
+   name="Article75_Ins"
+   nullok="true"
+   type="bit"/>
+  <column
+   desc="Fraud Comment"
+   name="FraudComment_Ins"
+   nullok="true"
+   type="varchar">
+   <columnParam
+    name="size"
+    value="500"/>
+  </column>
+  <column
+   desc="Notification Date"
+   name="NotificationDate_Ins"
+   nullok="true"
+   type="datetime"/>
+  <column
+   desc="Split Liability Details"
+   name="SplitLiabilityDetail_Ins"
+   nullok="true"
+   type="mediumtext"/> 
+  <column
+   desc="TP Contributing Negotiation"
+   name="TPContributingNeg_Ins"
+   nullok="true"
+   type="integer"/>
+  <column
+   desc="Amount Claimed"
+   name="AmountClaimed_Ins"
+   nullok="true"
+   type="currencyamount" />
+  <typekey
+    desc="Sample typelist"
+    name="SubLossCause_Ins"
+    nullok="true"
+    typelist="SubLossCause_Ins">
+    <keyfilters>
+     <keyfilter
+       name="LossCause"/>
+    </keyfilters>
+  </typekey>
+  <column
+   desc="Contributory Negligence"
+   name="ContNegligence_Ins"
+   nullok="true"
+   type="percentage"
+   />
+  <column
+   desc="Text to Record the Reason for Overriding outcome"
+   name="ReasonForOverride_Ext"
+   nullok="true"
+   type="text"/> 
+  <column
+   desc="Liability Admit Date"
+   name="LiabilityAdmitDate_Ins"
+   nullok="true"
+   type="dateonly"/>          
+</entity>

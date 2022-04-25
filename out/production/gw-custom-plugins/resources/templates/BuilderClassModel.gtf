@@ -1,0 +1,24 @@
+package <<packageName>>;
+
+<<usesStatement>>
+
+/**
+ * <builderName> - Builder for <entityName> entity
+ * <jiraReference> - <jiraDescription>
+ *
+ * Auto generated builder class
+ * Author: <authorName>
+ * Date: <today>
+ * Time: <time>
+*/
+@Export
+class <builderName> extends DataBuilder<<entityName>, <builderName>> {
+
+    construct(){
+        super(<entityName>)
+    }
+
+    <<withModel>>
+
+
+}

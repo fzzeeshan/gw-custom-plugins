@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<extension
+  xmlns="http://guidewire.com/datamodel"
+  desc="Claim"
+  entity="Claim"
+  exportable="false"
+  final="false"
+  table="Claim"
+  type="retirable">
+  <implementsEntity
+   name="Extractable"/>
+
+  <index
+   desc="Index for this entity"
+   name="claim7u"
+   unique="true">
+   <indexcol
+     keyposition="1"
+     name="ID"/>
+   <indexcol
+     keyposition="2"
+     name="Retired"/>
+  </index>
+
+  <foreignkey
+   columnName="PolicyID"
+   desc="Policy"
+   fkentity="Policy"
+   name="Policy"
+   nullok="true"/>
+  <array
+   arrayEntity="Exposure"
+   name="Exposure"/>
+
+  <typekey
+   desc="Loss Cause"
+   name="LossCause"
+   nullok="true"
+   typelist="LossCauseList"/>
+  <typekey
+   desc="Losstype for MOJ Settlement pack"
+   name="LossType"
+   nullok="true"
+   typelist="LossTypeList"/>
+
+  <column
+   desc="Information Only Claim?"
+   name="informationonly"
+   nullok="true"
+   type="bit"/>
+  <column
+   desc="Loss Date"
+   name="LossDate"
+   nullok="true"
+   type="dateonly"/>
+</extension>
